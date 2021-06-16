@@ -1,4 +1,4 @@
-university department :
+collegebranch :
     depart titele 
     level
 
