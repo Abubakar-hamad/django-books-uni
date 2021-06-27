@@ -3,36 +3,32 @@
 
 {% block my_code %}
 
-<div class="right">
-
-    <div class="slider_area">
-        <div class="single_slider  d-flex align-items-center slider_bg_1">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-7 col-md-6">
-                        <div class="slider_text">
-                            <h5 class="wow fadeInUpBig" data-wow-duration="1s" data-wow-delay=".2s"> +500 كتاب في شتى
-                                المجالات </h5>
-                            <h3 class="wow fadeInLeft" data-wow-duration="2.5s" data-wow-delay=".3s">مكتبة الجامعة
-                                الرقمية
-                            </h3>
-                            <p class="wow fadeInLeftBig" data-wow-duration="3s" data-wow-delay=".4s">أضف المزيد الى
-                                معلوماتك
-                                اذا كنت طالب في جامعتنا او من خارجها من خلال مكتبة الجامعة الرقمية</p>
-                            <!-- <div class="sldier_btn wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+<div class="slider_area">
+    <div class="single_slider  d-flex align-items-center slider_bg_1">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 col-md-6">
+                    <div class="slider_text">
+                        <h5 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".2s"> +500 كتاب في شتى
+                            المجالات </h5>
+                        <h3 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">مكتبة الجامعة الرقمية
+                        </h3>
+                        <p class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".4s">أضف المزيد الى معلوماتك
+                            اذا كنت طالب في جامعتنا او من خارجها من خلال مكتبة الجامعة الرقمية</p>
+                        <!-- <div class="sldier_btn wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
                             <a href="#" class="boxed-btn3">Upload your Resume</a>
                         </div> -->
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="ilstration_img wow fadeInRight d-none d-lg-block text-right" data-wow-duration="1s"
-            data-wow-delay=".2s">
-            <img src="img/banner/illustration.png" alt="">
-        </div>
+    </div>
+    <div class="ilstration_img wow fadeInRight d-none d-lg-block text-right" data-wow-duration="1s"
+        data-wow-delay=".2s">
+        <img src="img/banner/illustration.png" alt="">
     </div>
 </div>
+
 <!-- popular_catagory_area_start  -->
 <div class="popular_catagory_area">
     <div class="container">

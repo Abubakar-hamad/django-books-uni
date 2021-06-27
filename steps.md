@@ -10,7 +10,7 @@ books:
 
 blog:
     title
-    -descip
+    -author
     created at
     tags
     contents
