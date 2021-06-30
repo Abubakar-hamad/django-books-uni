@@ -1,0 +1,97 @@
+{% extends 'index.html' %}
+
+{% load static %}
+{% block my_code %}
+
+
+<!-- bradcam_area  -->
+<div class="right">
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4">
+                    <div class=" bradcam_text">
+                        <p class="wow fadeInLeftBig" data-wow-duration="2.5s">{{blog_detail.titel}} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/ bradcam_area  -->
+
+<div class="right">
+    <!--================Blog Area =================-->
+    <section class="blog_area single-post-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 posts-list">
+                    <div class="single-post">
+                        <div class="feature-img">
+                            <img class="img-fluid" src="{{blog_detail.image.url}}" alt="">
+                        </div>
+                        <div class="blog_details">
+                            <h2>{{blog_detail.titel}}
+                            </h2>
+                            <ul class="blog-info-link mt-3 mb-4">
+                                <li><a href="#"><i class="fa fa-clock-o"></i> {{blog_detail.create}} </a></li>
+                            </ul>
+                            <p class="excert">
+                                {{blog_detail.contents}}
+                            </p>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-lg-4">
+                    <div class="blog_right_sidebar">
+                        <aside class="single_sidebar_widget search_widget">
+
+                        </aside>
+
+                        <aside class="single_sidebar_widget search_widget">
+
+                        </aside>
+
+
+
+
+
+                        <aside class="single_sidebar_widget popular_post_widget">
+                            <h3 class="widget_title">Recent Post</h3>
+
+                            {% for recent in blog_recent %}
+
+
+                            <div class="media post_item">
+                                <img style="height: 60px;width: 60px; border-radius: 20px;" src="{{recent.image.url}}"
+                                    alt="">
+                                <div class="media-body">
+                                    <a href="single-blog.html">
+                                        <p style="margin-right: 10px;">{{recent.titel}}</p>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <hr>
+
+                            {% endfor %}
+
+
+
+                        </aside>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================ Blog Area end =================-->
+</div>
+
+
+{% endblock my_code %}

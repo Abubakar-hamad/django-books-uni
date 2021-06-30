@@ -8,4 +8,5 @@ urlpatterns = [
     path('college', views.colleges_list),
     path('college/<int:id>', views.college_det, name='college_detail'),
     path('branch', views.branch),
+    path('books', views.book),
 ]

@@ -67,26 +67,32 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section_title text-center mb-40">
-                    <h3>Testimonial</h3>
+                    <h3>اﻷخبـــار</h3>
                 </div>
             </div>
             <div class="col-xl-12">
                 <div class="testmonial_active owl-carousel">
 
-                    {% for br in branch_all %}
+                    {% for bl in blogs %}
                     <div class="single_carousel">
                         <div class="row">
                             <div class="col-lg-11">
                                 <div class="single_testmonial d-flex align-items-center">
                                     <div class="thumb">
-                                        <img src="{% static 'img/testmonial/author.png' %}" alt="">
-                                        <div class="quote_icon">
-                                            <i class="Flaticon flaticon-quote"></i>
+                                        <!-- <img src="{% static 'img/testmonial/author.png' %}" alt=""> -->
+                                        <img style="width: 200px;height: 200px; " src="{{bl.image.url}}" alt="">
+                                        <div class="right">
+                                            <div class="quote_icon">
+                                                <i class="blog_item_date">{{bl.create.day}}/{{bl.create.month}}</i>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="info">
-                                        <p>{{br.BRtitle}}</p>
-                                        <span>- Micky Mouse</span>
+                                        <p style="text-align: right;">{{bl.titel}}</p>
+                                        <span style="text-align: right;">
+                                            <li><a href="#"><i class="fa fa-user"></i> {{bl.author}}</a></li>
+
+                                        </span>
                                     </div>
                                 </div>
                             </div>

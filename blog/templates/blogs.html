@@ -1,0 +1,147 @@
+{% extends 'index.html' %}
+
+{% load static %}
+{% block my_code %}
+
+
+<!-- bradcam_area  -->
+<div class="right">
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4">
+                    <div class=" bradcam_text">
+                        <h3 class="wow fadeInLeftBig" data-wow-duration="2.5s">اﻷخبـــار </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/ bradcam_area  -->
+
+<!--================Blog Area =================-->
+<div class="right">
+    <section class="blog_area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mb-5 mb-lg-0">
+                    <div class="blog_left_sidebar">
+
+
+
+                        {% for blog in blogs %}
+
+                        <article class="blog_item">
+                            <div class="blog_item_img">
+                                <img class="card-img rounded-0" src="{{blog.image.url}}" alt="">
+                                <!-- <div class="blog_item_date">
+                                    <h3 style="text-align: center;">{{blog.create.day}}</h3>
+                                    <p>{{blog.create.month}} / {{blog.create.year}}</p>
+                                </div> -->
+                            </div>
+
+                            <div class="blog_details">
+                                <a class="d-inline-block" href="{{blog.get_absolute_url}}">
+                                    <h2>{{blog.titel}}</h2>
+                                </a>
+                                <p style="overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow:ellipsis">
+
+                                    {{ blog.contents }}
+
+
+
+                                </p>
+                                <a class="boxed-btn3" href="{{blog.get_absolute_url}}">قراءة المزيد</a>
+                                <ul class="blog-info-link">
+
+                                    <li><i class="fa fa-clock-o">&nbsp;</i> {{blog.create}} &nbsp;</li>
+                                    <li>| &nbsp;<i class="fa fa-user"> &nbsp;</i>{{blog.author}}</li>
+
+                                </ul>
+                            </div>
+                        </article>
+
+                        {% endfor %}
+
+
+                        <!-- paginator -->
+                        <div class="pagination_wrap">
+                            <ul>
+                                {% if blogs.has_previous %}
+
+                                <li><a href="?page={{blogs.previous_page_number}}"> <i class="ti-angle-right"></i> </a>
+                                </li>
+                                {% else %}
+                                <li class="disables"></li>
+                                {% endif %}
+
+                                {% for pages in blogs.paginator.page_range %}
+                                {% if blogs.number == pages %}
+                                <li><a href="#"><span>{{pages}}</span></a></li>
+                                {% else %}
+                                <li><a href="?page={{pages}}"><span>{{pages}}</span></a></li>
+                                {% endif %}
+                                {% endfor %}
+
+                                {% if blogs.has_next %}
+                                <li><a href="?page={{blogs.next_page_number}}"> <i class="ti-angle-left"></i>
+                                    </a></li>
+                                {% else %}
+                                <li class="disables"></li>
+                                {% endif %}
+
+                            </ul>
+                        </div>
+                        <!--/ end paginator -->
+
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="blog_right_sidebar">
+                        <aside class="single_sidebar_widget search_widget">
+
+                        </aside>
+
+                        <aside class="single_sidebar_widget search_widget">
+
+                        </aside>
+
+                        <aside class="single_sidebar_widget popular_post_widget">
+                            <h3 class="widget_title">أحدث اﻷخبـــار</h3>
+
+                            {% for recent in blog_recent %}
+
+
+                            <div class="media post_item">
+                                <img style="height: 60px;width: 60px; border-radius: 20px;" src="{{recent.image.url}}"
+                                    alt="">
+                                <div class="media-body">
+                                    <a href="single-blog.html">
+                                        <p style="margin-right: 10px;">{{recent.titel}}</p>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <hr>
+
+                            {% endfor %}
+
+
+
+                        </aside>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<!--================Blog Area =================-->
+
+
+
+{% endblock my_code %}
