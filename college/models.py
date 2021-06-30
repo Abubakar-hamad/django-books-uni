@@ -30,12 +30,12 @@ STUDY_YEARS = [
 
 
 class College(models.Model):
-    CLtitle = models.CharField(max_length=200)
+    CLtitle = models.CharField(max_length=200, verbose_name=_('اسم الكلية'))
     # CLimg = models.ImageField(upload_to = 'static/all/images/colleges', null = True, blank = True)
-    CLdescrip = models.TextField(max_length=1000)
+    CLdescrip = models.TextField(max_length=1000, verbose_name=_('وصف الكلية'))
     CLdepart = models.CharField(max_length=200,
                                 choices=SECTION,
-                                verbose_name=_("Department_Number"))
+                                verbose_name=_("عدد الأقسام"))
 
     def get_absolute_url(self):
         return reverse('college:college_detail', kwargs={'id': self.id})
@@ -49,29 +49,28 @@ class Department(models.Model):
                                  on_delete=models.CASCADE,
                                  blank=True,
                                  null=True,
-                                 verbose_name=_("College"))
-    Dtitle = models.CharField(max_length=200,
-                              verbose_name=_("Department_name"))
+                                 verbose_name=_("الكلية"))
+    Dtitle = models.CharField(max_length=200, verbose_name=_("القسم"))
     Dsystem = models.CharField(max_length=200,
                                choices=SYSTEM,
-                               verbose_name=_("study_system"))
+                               verbose_name=_("نظام الدراسة"))
 
     def __str__(self):
         return self.Dtitle
 
 
 class Book(models.Model):
-    Btitle = models.CharField(max_length=200, verbose_name=_("Book name"))
+    Btitle = models.CharField(max_length=200, verbose_name=_("عنوان الكتاب"))
     pdf = models.FileField(upload_to='-/pdf/Books', null=True, blank=True)
     Bcollge = models.ForeignKey('College',
                                 on_delete=models.CASCADE,
-                                verbose_name=_("College"))
+                                verbose_name=_("الكلية"))
     Bdepart = models.ForeignKey('Department',
                                 on_delete=models.CASCADE,
-                                verbose_name=_("Department"))
+                                verbose_name=_("القسم"))
     Bclass = models.CharField(max_length=20,
                               choices=Depart_Class,
-                              verbose_name=_("Semester"))
+                              verbose_name=_("الفصل الدراسي"))
     Bdescrip = models.TextField(max_length=200, verbose_name=_("Desciption"))
 
     def __str__(self):
@@ -79,9 +78,10 @@ class Book(models.Model):
 
 
 class Branch(models.Model):
-    BRtitle = models.CharField(max_length=200)
-    BRImg = models.ImageField(upload_to='static/img/branchs')
-    BRdescrip = models.TextField(max_length=1000)
+    BRtitle = models.CharField(max_length=200, verbose_name=_('الفرع'))
+    BRImg = models.ImageField(upload_to='static/img/branchs',
+                              verbose_name=_('الصورة'))
+    BRdescrip = models.TextField(max_length=1000, verbose_name=_('وصف الفرع'))
 
     def __str__(self):
         return self.BRtitle
