@@ -62,7 +62,7 @@ class Department(models.Model):
 
 class Book(models.Model):
     Btitle = models.CharField(max_length=200, verbose_name=_("Book name"))
-    pdf = models.FileField(upload_to='static/pdf/Books', null=True, blank=True)
+    pdf = models.FileField(upload_to='-/pdf/Books', null=True, blank=True)
     Bcollge = models.ForeignKey('College',
                                 on_delete=models.CASCADE,
                                 verbose_name=_("College"))

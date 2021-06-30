@@ -1,10 +1,14 @@
+import os
+
+from django import http
+from django.conf import Settings
 from blog.views import blogs
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, response, Http404
 from django.core.paginator import Paginator
 from .models import Branch, College, Department, Book
 from blog.models import Blog
-
+from .filters import BookFilter
 # Create your views here.
 
 
@@ -44,12 +48,23 @@ def branch(request):
 
 def book(request):
     all_book = Book.objects.all()
+    filter = BookFilter(request.GET, queryset=all_book)
+    all_book = filter.qs
     paginator = Paginator(all_book, 5)  # Show 25 contacts per page.
     page = request.GET.get('page')
     all_book = paginator.get_page(page)
-    context = {'all_book': all_book}
+
+    context = {'all_book': all_book, 'filter': filter, 'page': page}
     return render(request, 'book/book.html', context)
 
 
-def book_down(request, id):
-    pass
+# def download(request, path):
+#     file_path = os.path.join(settings.MEDIA_ROOT, path)
+#     if os.path.exists(file_path):
+#         with open(file_path, 'rb') as fh:
+#             response = HttpResponse(fh.read(), content_type="applications/pdf")
+#             response[
+#                 'Content-Desposition'] = 'inline,filename=' + os.path.basename(
+#                     file_path)
+#             return response
+#     raise Http404

@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'college',
     'blog',
+    'django_filters',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -125,6 +127,7 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, "media_cdn"),
 
 ###             fix               ###
 # "WARNINGS:
