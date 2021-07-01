@@ -2,6 +2,7 @@ import os
 
 from django import http
 from django.conf import Settings
+from django_filters.filters import OrderingFilter
 from blog.views import blogs
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, response, Http404
@@ -50,7 +51,7 @@ def book(request):
     all_book = Book.objects.all()
     filter = BookFilter(request.GET, queryset=all_book)
     all_book = filter.qs
-    paginator = Paginator(all_book, 5)  # Show 25 contacts per page.
+    paginator = Paginator(all_book, 6)  # Show 25 contacts per page.
     page = request.GET.get('page')
     all_book = paginator.get_page(page)
 
