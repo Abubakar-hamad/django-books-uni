@@ -12,7 +12,6 @@ class Blog(models.Model):
 
     titel = models.CharField(max_length=300)
     author = models.CharField(max_length=100, default='admin')
-    # tags = models
     contents = models.TextField(max_length=10000)
     image = models.ImageField(upload_to='static/img/Blogs', null=True)
 

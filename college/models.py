@@ -31,7 +31,6 @@ STUDY_YEARS = [
 
 class College(models.Model):
     CLtitle = models.CharField(max_length=200, verbose_name=_('اسم الكلية'))
-    # CLimg = models.ImageField(upload_to = 'static/all/images/colleges', null = True, blank = True)
     CLdescrip = models.TextField(max_length=1000, verbose_name=_('وصف الكلية'))
     CLdepart = models.CharField(max_length=200,
                                 choices=SECTION,
@@ -85,6 +84,3 @@ class Branch(models.Model):
 
     def __str__(self):
         return self.BRtitle
-
-
-# url(r'^download/(?p<path>.*)$' ,server, {'document_root':settings.MEDIA_ROOT}),
