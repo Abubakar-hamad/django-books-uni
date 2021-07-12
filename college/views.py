@@ -1,7 +1,4 @@
-import os
-
 from django import http
-from django.conf import Settings
 from django_filters.filters import OrderingFilter
 from blog.views import blogs
 from django.shortcuts import render, get_object_or_404, redirect
@@ -10,6 +7,8 @@ from django.core.paginator import Paginator
 from .models import Branch, College, Department, Book
 from blog.models import Blog
 from .filters import BookFilter
+from django.template.loader import get_template
+from xhtml2pdf import pisa
 # Create your views here.
 
 
