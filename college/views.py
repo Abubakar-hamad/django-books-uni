@@ -8,7 +8,6 @@ from .models import Branch, College, Department, Book
 from blog.models import Blog
 from .filters import BookFilter
 from django.template.loader import get_template
-from xhtml2pdf import pisa
 # Create your views here.
 
 

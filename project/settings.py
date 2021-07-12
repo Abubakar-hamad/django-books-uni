@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'blog',
     'django_filters',
     'bootstrap4',
-    'xhtml2pdf',
 ]
 
 MIDDLEWARE = [
