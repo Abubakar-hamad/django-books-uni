@@ -14,8 +14,8 @@
                     <div class=" bradcam_text">
                         <hr style="background-color: blanchedalmond;">
 
-                        <h3 class="wow fadeInLeftBig" data-wow-duration="2.5s">
-                            +500 كتاب
+                        <h3 class="wow fadeInLeft" data-wow-duration="2.5s" data-wow-delay="1s">
+                            المكتبة الرقمية
                         </h3>
                         <hr style="background-color: blanchedalmond;">
 
@@ -131,12 +131,15 @@
 
                                             {% if book.pdf %}
                                             <a style="margin-top: 30px; padding: 10px; " href="{{book.pdf.url}}"
-                                                target="_blank" download class="boxed-btn3">تحميل</a>
+                                                target="_blank" download class="boxed-btn3"><i
+                                                    class="fa fa-download"></i> تحميل</a>
                                             <a style="margin-top: 30px; padding: 10px; " href="{{book.pdf.url}}"
-                                                target="_blank" class="boxed-btn3">عرض</a>
+                                                target="_blank" class="boxed-btn3"> <i class="fa fa-book">
+                                                    &nbsp;</i>قراءة</a>
                                             {% else %}
 
-                                            <p style=" color: rgb(255, 1, 1); padding: 15px; margin: 10px;">No Pdf </p>
+                                            <p style=" color: rgb(255, 1, 1); padding: 15px; margin: 10px;">لا يوجد كتاب
+                                            </p>
 
                                             {% endif %}
 
